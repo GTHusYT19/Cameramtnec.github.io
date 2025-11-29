@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera.exe</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="bulma/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+  <span class="hamburger" onclick="toggleMenu()">☰</span>
+  <div class="menu" id="menu">
+    <a href="index.html">Accueil</a>
+    <a href="contact.html">Contact</a>
+    <a href="Camera.html">Camera</a>
+  </div>
+</nav>
+
+<!-- Contenu -->
+<div style="padding: 20px; margin-top: 60px;">
+  <h1 class="title has-text-centered">Bienvenue sur mon site</h1>
+  <p class="has-text-centered">Vous pouvez me contacter via les réseaux sociaux ou par email/numéro de téléphone.</p> 
+<h1>‎</h1>
+<h1>‎</h1>
+<h1>‎</h1>
+<h1>‎</h1>
+<h1>‎</h1>
+<h1>‎</h1>
+<h1>‎</h1>
+<h1>‎</h1>
+  <!-- BOUTONS ALIGNÉS -->
+  <div class="boutons-contact">
+    <a href="https://www.tiktok.com/@gravityyt9323" target="_blank">
+    <button class="tiktok">TikTok</button></a>
+    <a href="https://wa.me/33783459388" target="_blank">
+    <button class="whatsapp">WhatsApp</button></a>
+    <button class="numero" onclick="copyValue('0783459388')">Numéro De Téléphone</button>
+    <button class="email" onclick="copyValue('huseyinammaryasir@gmail.com')">Email</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p class="footer">Copyright © 2025 GTHusYT</p>
+</footer>
+<!-- JS dans le HTML -->
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+
+function copyValue(value) {
+  navigator.clipboard.writeText(value);
+  alert(value + " a été copié dans le presse-papiers !");
+}
+</script>
+
+</body>
+</html>

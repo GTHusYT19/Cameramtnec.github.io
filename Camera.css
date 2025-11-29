@@ -1,0 +1,155 @@
+/* Styles généraux et import */
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+
+html, body {
+  background: linear-gradient(to right, #000000, #5c5c5c);
+  height: 100%;
+  font-family: Arial, sans-serif; /* Ajout de la police au body */
+  margin: 0; /* Assure l'absence de marge par défaut */
+  padding: 0;
+}
+
+section, .hero, .container, .content {
+  background: transparent !important;
+}
+
+/* ------------------------------------------------------------------- */
+/* ## Barre de navigation (Corrigée pour le centrage) */
+/* ------------------------------------------------------------------- */
+
+/* 1. CONTENEUR NAV : Utilise Flexbox pour aligner le hamburger et le menu */
+nav {
+  background-color: #333;
+  overflow: hidden;
+  display: flex; /* Active Flexbox pour gérer les enfants */
+  align-items: center; /* Centre verticalement */
+  padding: 10px 20px; /* Ajout du padding pour l'espace */
+}
+
+/* 2. LIENS INDIVIDUELS : Suppression du float */
+nav a {
+  /* float: left; <--- SUPPRIMÉ, car il annule Flexbox */
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  margin: 0 15px; /* Ajout d'une marge pour espacer les liens sur grand écran */
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* 3. MENU (Conteneur des liens) : Assure le centrage sur grand écran */
+.menu {
+  display: flex;
+  flex-grow: 1; /* Ligne CLÉ 1 : Prend tout l'espace disponible */
+  justify-content: center; /* Ligne CLÉ 2 : Centre les liens à l'intérieur */
+}
+
+/* 4. BOUTON HAMBURGER : géré par Flexbox */
+.hamburger {
+  display: none;
+  /* float: right; <--- SUPPRIMÉ */
+  font-size: 22px;
+  color: white;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------- */
+/* ## Media Queries (Mobile) */
+/* ------------------------------------------------------------------- */
+
+@media screen and (max-width: 700px) {
+  /* Le hamburger est visible et forcé à droite */
+  .hamburger {
+    display: block;
+    margin-left: auto; /* Pousse le hamburger à droite */
+  }
+
+  /* Le menu est masqué par défaut et passe en colonne */
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start; /* Réinitialise l'alignement pour le menu vertical */
+  }
+
+  /* Liens en mode colonne */
+  nav a {
+    float: none;
+    text-align: left;
+    border-top: 1px solid #444;
+    margin: 0; /* Suppression des marges latérales en mode mobile */
+  }
+}
+
+.menu.show {
+  display: flex !important;
+}
+
+/* ------------------------------------------------------------------- */
+/* ## Contenu et Footer */
+/* ------------------------------------------------------------------- */
+
+/* Styles supprimés car ils n'étaient pas utilisés dans la structure HTML fournie : .navbar, .nav-links, .nav-links li, .nav-links li a */
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.top {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #000000;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.Cameras {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.Camera {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.Camera img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to right, #000000, #5c5c5c);
+    color: white;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
