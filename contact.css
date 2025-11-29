@@ -188,3 +188,8 @@ h1 {
 .email:active {
   box-shadow: 2px 2px 5px #854f03;
 }
+
+.container {
+  width: 90%; /* plutôt que 900px */
+  margin: 0 auto;
+}

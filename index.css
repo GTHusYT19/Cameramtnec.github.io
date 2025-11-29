@@ -132,3 +132,8 @@ p {
     width: 40%;
     font-size: 24px;
 }
+
+.container {
+  width: 90%; /* plutôt que 900px */
+  margin: 0 auto;
+}
