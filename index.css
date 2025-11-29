@@ -128,7 +128,10 @@ h1 {
 
 
 p {
-    text-align: center;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* image camera */

@@ -147,3 +147,10 @@ nav a:hover {
   width: 90%; /* plutôt que 900px */
   margin: 0 auto;
 }
+
+p {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
