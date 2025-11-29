@@ -147,11 +147,18 @@ nav a:hover {
     text-align: center;
     background: linear-gradient(to right, #000000, #5c5c5c);
     color: white;
-    padding: 15px;
+    padding: 8px;
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
     z-index: 1000;
+}
+
+@media screen and (max-width: 700px) {
+    .footer {
+        font-size: 10px;
+        padding: 5px;
+    }
 }
 
 .container {
