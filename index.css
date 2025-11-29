@@ -77,12 +77,16 @@ nav a:hover {
         text-align: left;
         border-top: 1px solid #444;
         margin: 0; /* Suppression des marges latérales en mode mobile */
+        padding: 8px 12px; /* Réduit le padding pour les liens */
+        font-size: 14px;
     }
 
     /* Le hamburger est visible et forcé à droite */
     .hamburger {
         display: block;
         margin-left: auto; /* Pousse le hamburger à droite */
+        font-size: 18px;
+        padding: 10px 14px;
     }
 }
 
