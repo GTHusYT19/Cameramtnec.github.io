@@ -1,0 +1,131 @@
+/* ------------------------------------------------------------------- */
+/* ## Import Bulma et styles généraux */
+/* ------------------------------------------------------------------- */
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+
+html, body {
+    background: linear-gradient(to right, #000000, #5c5c5c);
+    height: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+section, .hero, .container, .content {
+    background: transparent !important;
+}
+
+/* ------------------------------------------------------------------- */
+/* ## Barre de navigation / Menu */
+/* ------------------------------------------------------------------- */
+nav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+.menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.hamburger {
+    display: none;
+    font-size: 22px;
+    color: white;
+    padding: 14px 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+        margin-left: auto;
+        font-size: 18px;
+        padding: 10px 14px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    nav a {
+        float: none;
+        text-align: left;
+        border-top: 1px solid #444;
+        margin: 0;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+.menu.show {
+    display: flex !important;
+}
+
+/* ------------------------------------------------------------------- */
+/* ## Contenu général et cartes Dashboard */
+/* ------------------------------------------------------------------- */
+section.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+}
+
+.card.wide {
+    grid-column: 1 / -1;
+}
+
+.count {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+small {
+    color: #ccc;
+}
+
+/* ------------------------------------------------------------------- */
+/* ## Contenu centré simple */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+p {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}

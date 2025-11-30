@@ -1,0 +1,80 @@
+/* ------------------------------------------------------------------- */
+/* ## Import Bulma et styles généraux */
+/* ------------------------------------------------------------------- */
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+
+html, body {
+    background: linear-gradient(to right, #000000, #5c5c5c);
+    height: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------------------------------- */
+/* ## Login page */
+/* ------------------------------------------------------------------- */
+.login-container {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: rgba(0,0,0,0.8);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: white;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-box label {
+    font-weight: 600;
+}
+
+.login-box input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #222;
+    color: #fff;
+}
+
+.login-box input::placeholder {
+    color: #aaa;
+}
+
+.login-box button {
+    margin-top: 10px;
+    padding: 12px;
+    background: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-box button:hover {
+    opacity: 0.85;
+}
+
+#error {
+    color: red;
+    text-align: center;
+    height: 18px;
+}

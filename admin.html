@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+<!-- 🔒 Vérification de connexion -->
+<script>
+    if (!localStorage.getItem("logged_in")) {
+        window.location.href = "login.html";
+    }
+
+    // Fonction de déconnexion
+    function logout() {
+        localStorage.removeItem("logged_in");
+        window.location.href = "login.html";
+    }
+
+    // Fonction pour afficher/masquer le menu mobile
+    function toggleMenu() {
+        document.getElementById('menu').classList.toggle('show');
+    }
+</script>
+
+<nav class="navbar">
+  <span class="hamburger" onclick="toggleMenu()">☰</span>
+  <div class="menu" id="menu">
+    <a href="index.html">Accueil</a>
+    <a href="contact.html">Contact</a>
+    <a href="Camera.html">Camera</a>
+    <a href="admin.html">Admin</a>
+    <a href="#" onclick="logout()">Déconnexion</a>
+  </div>
+</nav>
+
+<section class="cards">
+    <div class="card">
+        <h2>Personnes connectées</h2>
+        <div class="count" id="connectedCount">1</div>
+        <small>Mise à jour : <span id="lastUpdate">--</span></small>
+    </div>
+
+    <div class="card wide">
+        <h2>Historique des connexions</h2>
+        <canvas id="chart" width="700" height="260"></canvas>
+    </div>
+</section>
+
+<script>
+    const connectedEl = document.getElementById('connectedCount');
+    const lastUpdateEl = document.getElementById('lastUpdate');
+    const canvas = document.getElementById('chart');
+    const ctx = canvas.getContext('2d');
+
+    // Historique des connexions
+    let history = [1];
+
+    function drawChart(data){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#00ff00";
+        ctx.moveTo(0, 260 - data[0]*10);
+        for (let i=1; i<data.length; i++){
+            ctx.lineTo(i * (canvas.width / data.length), 260 - data[i]*10);
+        }
+        ctx.stroke();
+    }
+
+    function updateDashboard(){
+        // Comme un utilisateur unique = 1
+        const count = 1;
+        history.push(count);
+        if (history.length > 30) history.shift(); // garde les 30 dernières valeurs
+        connectedEl.textContent = count;
+        lastUpdateEl.textContent = new Date().toLocaleTimeString();
+        drawChart(history);
+    }
+
+    setInterval(updateDashboard, 1500);
+    updateDashboard();
+</script>
+</body>
+</html>
