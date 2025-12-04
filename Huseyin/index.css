@@ -1,0 +1,130 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+
+/* barre de navigation */
+
+body,html {
+    background: linear-gradient(to right, #000000, #5c5c5c);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.center-box {
+    margin-top: 120px;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: transparent;
+}
+
+/* 1. CONTENEUR NAV : Utilise Flexbox pour aligner le hamburger et le menu */
+nav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex; /* Active Flexbox */
+    align-items: center; /* Centre verticalement les enfants */
+}
+
+/* 2. LIENS INDIVIDUELS : Suppression du float qui empêchait le centrage */
+nav a {
+    /* float: left; <--- SUPPRIMÉ */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin: 0 15px; /* Ajoute un espace entre les liens */
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* 3. MENU (Le conteneur des liens) : applique le centrage sur grand écran */
+.menu {
+    display: flex;
+    /* Ligne CLÉ 1 : Étire le menu pour occuper tout l'espace restant */
+    flex-grow: 1; 
+    /* Ligne CLÉ 2 : Centre les liens à l'intérieur de cet espace étiré */
+    justify-content: center; 
+}
+
+/* 4. BOUTON HAMBURGER : géré par Flexbox, non par float */
+.hamburger {
+    display: none;
+    /* float: right; <--- SUPPRIMÉ */
+    font-size: 22px;
+    color: white;
+    padding: 14px 20px;
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES (pour les petits écrans) */
+
+@media screen and (max-width: 700px) {
+    /* En mode mobile, on réinitialise l'alignement pour une colonne */
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-start; /* Aligne le menu à gauche */
+    }
+
+    /* Ajustement des liens pour la vue colonne */
+    nav a {
+        float: none;
+        text-align: left;
+        border-top: 1px solid #444;
+        margin: 0; /* Suppression des marges latérales en mode mobile */
+        padding: 8px 12px; /* Réduit le padding pour les liens */
+        font-size: 14px;
+    }
+
+    /* Le hamburger est visible et forcé à droite */
+    .hamburger {
+        display: block;
+        margin-left: auto; /* Pousse le hamburger à droite */
+        font-size: 18px;
+        padding: 10px 14px;
+    }
+}
+
+.menu.show {
+    display: flex !important;
+}
+
+
+/* contenue */
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+p {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* image camera */
+.img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.img2 {
+    text-align: center;
+    width: 40%;
+    font-size: 24px;
+}
+
+.container {
+  width: 90%; /* plutôt que 900px */
+  margin: 0 auto;
+}
